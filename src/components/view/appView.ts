@@ -4,8 +4,9 @@ import Sources from './sources/sources';
 import { ArticlesData, SourcesData } from "../../types";
 
 export class AppView {
-    news: News;
-    sources: Sources;
+    private news: News;
+    private sources: Sources;
+    
     constructor() {
         this.news = new News();
         this.sources = new Sources();

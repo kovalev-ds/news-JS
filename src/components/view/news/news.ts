@@ -17,23 +17,33 @@ class News {
                 querySelector<HTMLElement>(newsClone, '.news__item').classList.add('alt');
             }
 
-            querySelector<HTMLElement>(newsClone, '.news__meta-photo').style.backgroundImage = `url(${
+            querySelector<HTMLElement>(newsClone, '.news__meta-photo')
+                .style.backgroundImage = `url(${
                     item.urlToImage ?? 'img/news_placeholder.jpg'
-            })`;
+                })`;
 
 
-            querySelector<HTMLElement>(newsClone, '.news__meta-author').textContent = item.author ?? item.source.name;
+            querySelector<HTMLElement>(newsClone, '.news__meta-author')
+                .textContent = item.author ?? item.source.name;
 
-            querySelector<HTMLElement>(newsClone, '.news__meta-date').textContent = item.publishedAt
-                .slice(0, 10)
-                .split('-')
-                .reverse()
-                .join('-');
+            querySelector<HTMLElement>(newsClone, '.news__meta-date')
+                .textContent = item.publishedAt
+                    .slice(0, 10)
+                    .split('-')
+                    .reverse()
+                    .join('-');
 
-            querySelector<HTMLElement>(newsClone, '.news__description-title').textContent = item.title;
-            querySelector<HTMLElement>(newsClone, '.news__description-source').textContent = item.source.name;
-            querySelector<HTMLElement>(newsClone, '.news__description-content').textContent = item.description;
-            querySelector<HTMLAnchorElement>(newsClone, '.news__read-more a').setAttribute('href', item.url);
+            querySelector<HTMLElement>(newsClone, '.news__description-title')
+                .textContent = item.title;
+
+            querySelector<HTMLElement>(newsClone, '.news__description-source')
+                .textContent = item.source.name;
+
+            querySelector<HTMLElement>(newsClone, '.news__description-content')
+                .textContent = item.description;
+                
+            querySelector<HTMLAnchorElement>(newsClone, '.news__read-more a')
+                .setAttribute('href', item.url);
 
             fragment.append(newsClone);
         });
