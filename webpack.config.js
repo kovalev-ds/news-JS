@@ -34,7 +34,7 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
-        new Dotenv(),
+        new Dotenv({ systemvars: true }),
     ],
 };
 
