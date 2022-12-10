@@ -2,9 +2,10 @@ import './news.css';
 
 import {Article} from "../../../types"
 import {querySelector} from "../../../utils"
+import { iView } from '../../contracts/iView';
 
-class News {
-    draw(data: Article[]) {
+class News implements iView<Article> {
+    draw(data: Article[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
