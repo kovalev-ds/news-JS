@@ -1,7 +1,7 @@
 import './sources.css';
 
-import {Source} from "../../../types"
-import {querySelector} from "../../../utils"
+import { Source } from "../../../types"
+import { querySelector } from "../../../utils"
 
 class Sources {
     draw(data: Source[]) {
